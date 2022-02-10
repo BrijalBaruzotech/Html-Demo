@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html style="height: 100%; width: 100%; display: flex">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
       href="https://cdn.rawgit.com/mfd/09b70eb47474836f25a21660282ce0fd/raw/e06a670afcb2b861ed2ac4a1ef752d062ef6b46b/Gilroy.css"
     />
-
     <style>
       @font-face {
         font-family: "Helvetica";
@@ -14,15 +14,6 @@
         font-weight: normal;
         font-style: normal;
         font-display: swap;
-      }
-
-      .flex-container {
-        display: flex;
-        flex: 1 1 0%;
-        flex-direction: column;
-        background: #050505;
-        justify-content: center;
-        align-items: center;
       }
       .content1 {
         font-family: "Helvetica";
@@ -82,8 +73,86 @@
         -webkit-text-stroke: 1px #050505;
       }
 
-      .stroke {
+      .stroke1 {
         -webkit-text-stroke: 2px #ffffff;
+      }
+      .stroke2 {
+        -webkit-text-stroke: 2px #ffffff;
+      }
+      .flex-container {
+        display: flex;
+        flex: 1 1 0%;
+        flex-direction: column;
+        background-color: #050505;
+        justify-content: center;
+        align-items: center;
+      }
+
+      @media only screen and (max-width: 620px) {
+        .flex-container {
+          background-color: #050505;
+          display: flex;
+          justify-content: center;
+          align-items:flex-start;  
+          margin-left: 30px;      
+        }
+        .content1 {
+          text-align: left;
+          font-family: Helvetica;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 40px;
+          line-height: 50px;
+        }
+
+        .stroke1::after {
+          content: "\a";
+          white-space: pre;
+        }
+
+        .gradient1 {
+          font-family: Helvetica;
+          text-align: left;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 40px;
+          line-height: 50px;
+          background-image: linear-gradient(
+            265.07deg,
+            #f6d365 10%,
+            #fda085 100%
+          );
+          -webkit-background-clip: text;
+          -moz-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          -moz-text-fill-color: transparent;
+        }
+
+        .content2 {
+          font-family: Gilroy-Medium;
+          text-align: left;
+          margin-top: 50px;
+          font-size: 16px;
+          line-height: 19px;
+          color: #ffffff;
+          opacity: 0.5;
+        }
+
+        .btn {
+          left: auto;
+          width: 173px;
+          height: 44px;
+          margin-top: 80px;
+          background: #f6d365;
+          border-radius: 50px;
+        }
+        .text {
+          font-family: Gilroy-SemiBold;
+          font-size: 16px;
+          line-height: 19px;
+          text-align: center;
+          color: #050505;
+        }
       }
     </style>
   </head>
@@ -91,9 +160,11 @@
   <body class="flex-container">
     <div style="max-width: 1240px">
       <div class="content1">
-        <span class="stroke">We</span> <span class="gradient1">Design</span
-        ><span class="stroke"> &</span> <span class="gradient1">Build</span
-        ><span class="stroke"> Digital Products for the 21st Century.</span>
+        <span class="stroke1">We</span> <span class="gradient1">Design</span
+        ><span class="stroke2"> & </span><span class="gradient1">Build</span
+        ><span class="stroke2">
+          Digital Products <span class="stroke1">for the 21st</span><span class="stoke1"> Century.</span
+        >
       </div>
       <div class="content2">
         Strategy, Design, Development, Business Automation, Consultancy.
