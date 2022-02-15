@@ -24,24 +24,32 @@
         font-display: swap;
       }
       @font-face {
-        font-family: "Gilroy-Medium";
-        src: url("gilroy-medium-webfont.woff2") format("woff2"),
-          url("gilroy-medium-webfont.woff") format("woff");
+        font-family: "CircularStd-Medium";
+        src: url("CircularStd-Medium.woff2") format("woff2"),
+          url("CircularStd-Medium.woff") format("woff");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "CircularStd-Black";
+        src: url("CircularStd-Black.woff2") format("woff2"),
+          url("CircularStd-Black.woff") format("woff");
         font-weight: normal;
         font-style: normal;
         font-display: swap;
       }
       .content1 {
         display: none;
-        font-family: "Helvetica";
+        font-family: "CircularStd-Black";
         font-style: normal;
         font-size: 74px;
-        line-height: 85px;
+        line-height: 100px;
         text-align: center;
       }
       .hidden_content {
         display: none;
-        font-family: "Helvetica";
+        font-family: "CircularStd-Black";
         font-style: normal;
         font-weight: normal;
         color: white;
@@ -50,30 +58,26 @@
         text-align: center;
       }
       .content2 {
-        font-family: 'Gilroy-Medium';
+        font-family: 'CircularStd-Medium';
         font-size: 30px;
         line-height: 35px;
         text-align: center;
         margin-top: 80px;
-        color: #ffffff;
-        opacity: 0.5;
+        color: #828282;
       }
 
       .gradient1 {
-        -webkit-text-stroke: 1px transparent;
-        font-family: Helvetica;
-        font-style: normal;
-        font-weight: 600;
+        /* -webkit-text-stroke: 0.5px transparent; */
+        font-family: "CircularStd-Black";
         font-size: 74px;
-        line-height: 85px;
         background-image: linear-gradient(to bottom right, #fda085 10%, #f6d365 100%);
         -webkit-background-clip: text;
         -moz-background-clip: text;
         -webkit-text-fill-color: transparent;
-        -moz-text-fill-color: transparent;
         background-size:200% 200%;     
         animation: animatedText 3s infinite alternate;
       }
+
       @keyframes animatedText {
         0% {
           background-position:100% 100%; 
@@ -101,7 +105,7 @@
       }
 
       .text {
-        font-family: 'Gilroy-SemiBold';
+        font-family: 'CircularStd-Medium';
         font-size: 30px;
         font-weight: 400;
         line-height: 35px;
@@ -126,20 +130,45 @@
       }
 
       @media only screen and (min-width:768px){
+        
         .content1 {
-          display: block;
-          font-family: "Helvetica";
-          font-style: normal;
-          color:white;
-          font-size: 74px;
-          line-height: 85px;
-          text-align: center;
+        display: block;
+        font-family: "CircularStd-Black";
+        font-style: normal;
+        font-size: 74px;
+        line-height:100px;
+        color:white;
+        text-align: center;
         }
+        .gradient1 {
+          height: 80px;
+        /* -webkit-text-stroke: 0.5px transparent; */
+        font-family: "CircularStd-Black";
+        font-size: 74px;
+        background-image: linear-gradient(to bottom right, #fda085 10%, #f6d365 100%);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size:200% 200%;     
+        animation: animatedText 3s infinite alternate;
+      }
+
+      @keyframes animatedText {
+        0% {
+          background-position:100% 100%; 
+        }
+
+        100% {
+          background-position:0 0; 
+        }
+      }
+
+       
       }
       @media only screen and (min-width:426px){
         .content1 {
           display: block;
-          font-family: "Helvetica";
+          font-family: "CircularStd-Black";
           font-style: normal;
           font-weight: 600;
           font-size: 74px;
@@ -158,7 +187,7 @@
         .hidden_content {
           display: block;
           text-align: left;
-          font-family: Helvetica;
+          font-family: 'CircularStd-Black';
           font-style: normal;
           font-weight: normal;
           font-size: 40px;
@@ -170,7 +199,7 @@
       } */
 
         .gradient1 {
-          font-family: Helvetica;
+          font-family:"CircularStd-Black";
           text-align: left;
           font-style: normal;
           font-weight: normal;
@@ -196,13 +225,12 @@
       }
 
         .content2 {
-          font-family:'Gilroy-Medium';
+          font-family:'CircularStd-Medium';
           text-align: left;
           margin-top: 50px;
           font-size: 16px;
           line-height: 19px;
-          color: #ffffff;
-          opacity: 0.5;
+          color: #828282;
         }
 
         .btn {
@@ -214,7 +242,7 @@
           border-radius: 50px;
         }
         .text {
-          font-family:'Gilroy-SemiBold';
+          font-family:'CircularStd-Medium';
           font-size: 16px;
           line-height: 19px;
           text-align: center;
@@ -226,13 +254,10 @@
 
   <body class="flex-container">
     <div style="max-width: 1240px">
-      <div class="content1">
-        <span class="stroke">We</span> <span class="gradient1">Design</span
-        ><span class="stroke"> & </span><span class="gradient1">Build</span
-        ><span class="stroke">
-          Digital Products <span class="stroke">for the 21st</span><span class="stoke"> Century.</span
-        >
-      </div>
+      <h1 style="flex: row; display: flex; flex-wrap: wrap;">
+        <span class="gradient1">Design 
+        <!-- <strong class="content1 -webkit-text-stroke: 2px #ffffff; height:">We</strong><strong class="gradient1">Design </strong><strong class="content1 -webkit-text-stroke: 2px #ffffff;">& </strong><strong class="gradient1">Build </strong><strong class="content1 -webkit-text-stroke: 2px #ffffff;">Digital</strong><strong class="content1 ">Products</strong><br/></strong><strong class="content1"> for the 21st Century.</strong> -->
+      </h1>
       <div class="hidden_content">
         <div class="stroke">We</div> <div><span class="gradient1">Design</span
         ><span class="stroke"> & </span><span class="gradient1">Build</span
