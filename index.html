@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html style="height: 100%; width: 100%; display: flex">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.rawgit.com/mfd/09b70eb47474836f25a21660282ce0fd/raw/e06a670afcb2b861ed2ac4a1ef752d062ef6b46b/Gilroy.css"
-    />
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
-      @font-face {
+        
+        @font-face {
         font-family: "Helvetica";
         src: url("Helvetica.woff2") format("woff2"),
           url("Helvetica.woff") format("woff");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "Gilroy-Medium";
+        src: url("gilroy-medium-webfont.woff2") format("woff2"),
+          url("gilroy-medium-webfont.woff") format("woff");
         font-weight: normal;
         font-style: normal;
         font-display: swap;
@@ -23,42 +29,46 @@
         font-style: normal;
         font-display: swap;
       }
-      @font-face {
-        font-family: "CircularStd-Medium";
-        src: url("CircularStd-Medium.woff2") format("woff2"),
-          url("CircularStd-Medium.woff") format("woff");
-        font-weight: normal;
-        font-style: normal;
-        font-display: swap;
+      
+      .flex-container {
+        display: flex;
+        flex: 1 1 0%;
+        flex-direction: column;
+        background-color: #050505;
+        justify-content: center;
+        align-items: center;
       }
-      @font-face {
-        font-family: "CircularStd-Black";
-        src: url("CircularStd-Black.woff2") format("woff2"),
-          url("CircularStd-Black.woff") format("woff");
-        font-weight: normal;
-        font-style: normal;
-        font-display: swap;
-      }
-      .content1 {
+
+      .web_view {
         display: none;
-        font-family: "CircularStd-Black";
-        font-style: normal;
-        font-size: 74px;
-        line-height: 100px;
-        text-align: center;
+        text-align: left;
       }
-      .hidden_content {
+      .mob_view {
         display: none;
-        font-family: "CircularStd-Black";
-        font-style: normal;
-        font-weight: normal;
-        color: white;
-        font-size: 74px;
-        line-height: 85px;
-        text-align: center;
+      
       }
-      .content2 {
-        font-family: 'CircularStd-Medium';
+
+      ::selection {
+        background: #f6d365;
+      }
+
+      .web_content1 {
+          display: block;
+          font-family: "Helvetica";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 74px;
+          line-height: 85px;
+          text-align: center;
+          color: white;
+        }
+
+        span{
+          padding-left: 12px;
+        }
+
+        .web_content2 {
+        font-family:'Gilroy-Medium';
         font-size: 30px;
         line-height: 35px;
         text-align: center;
@@ -66,18 +76,19 @@
         color: #828282;
       }
 
-      .gradient1 {
-        /* -webkit-text-stroke: 0.5px transparent; */
-        font-family: "CircularStd-Black";
+        .web_grad {
+        font-family: "Helvetica";
+        font-style: normal;
+        font-weight: 800;
         font-size: 74px;
+        line-height: 90px;
+        -webkit-text-stroke: 2px transparent; 
         background-image: linear-gradient(to bottom right, #fda085 10%, #f6d365 100%);
         -webkit-background-clip: text;
-        -moz-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-size:200% 200%;     
         animation: animatedText 3s infinite alternate;
       }
-
       @keyframes animatedText {
         0% {
           background-position:100% 100%; 
@@ -86,9 +97,9 @@
         100% {
           background-position:0 0; 
         }
-      }
+    }
 
-      .btn {
+    .web_btn {
         background: #f6d365;
         border-radius: 50px;
         width: 400px;
@@ -100,106 +111,31 @@
         transition: all 1ms;
       }
 
-      .btn:hover {
+      .web_btn:hover {
         box-shadow: 1px 1px 2px #f6d365;
       }
 
-      .text {
-        font-family: 'CircularStd-Medium';
+      .web_text {
+        font-family: 'Gilroy-SemiBold';
         font-size: 30px;
         font-weight: 400;
         line-height: 35px;
         text-align: center;
       }
 
-      /* .stroke {
-        -webkit-text-stroke: 2px #ffffff;
-      } */
-      
-      .flex-container {
-        display: flex;
-        flex: 1 1 0%;
-        flex-direction: column;
-        background-color: #050505;
-        justify-content: center;
-        align-items: center;
-      }
-
-      ::selection {
-        background: #f6d365;
-      }
-
-      @media only screen and (min-width:768px){
-        
-        .content1 {
-        display: block;
-        font-family: "CircularStd-Black";
+      .mob_content1 {
+        font-family: "Helvetica";
         font-style: normal;
-        font-size: 74px;
-        line-height:100px;
-        color:white;
-        text-align: center;
-        }
-        .gradient1 {
-          height: 80px;
-        /* -webkit-text-stroke: 0.5px transparent; */
-        font-family: "CircularStd-Black";
-        font-size: 74px;
-        background-image: linear-gradient(to bottom right, #fda085 10%, #f6d365 100%);
-        -webkit-background-clip: text;
-        -moz-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-size:200% 200%;     
-        animation: animatedText 3s infinite alternate;
+        font-weight: normal;
+        font-size: 40px;
+        line-height: 50px;
+        text-align: left;
+        color: #FFFFFF;
+        -webkit-text-stroke: 1px #FFFFFF;
       }
 
-      @keyframes animatedText {
-        0% {
-          background-position:100% 100%; 
-        }
-
-        100% {
-          background-position:0 0; 
-        }
-      }
-
-       
-      }
-      @media only screen and (min-width:426px){
-        .content1 {
-          display: block;
-          font-family: "CircularStd-Black";
-          font-style: normal;
-          font-weight: 600;
-          font-size: 74px;
-          line-height: 85px;
-          text-align: center;
-        }
-      }
-      @media only screen and (max-width: 425px) {
-        .flex-container {
-          background-color: #050505;
-          display: flex;
-          justify-content: center;
-          align-items:flex-start;  
-          margin-left: 30px;      
-        }
-        .hidden_content {
-          display: block;
-          text-align: left;
-          font-family: 'CircularStd-Black';
-          font-style: normal;
-          font-weight: normal;
-          font-size: 40px;
-          line-height: 50px;
-        }
-
-        /* .stroke {
-        -webkit-text-stroke: 2px #551ed6;
-      } */
-
-        .gradient1 {
-          font-family:"CircularStd-Black";
+      .mob_grad {
+          font-family:"Helvetica";
           text-align: left;
           font-style: normal;
           font-weight: normal;
@@ -210,6 +146,7 @@
         -moz-background-clip: text;
         -webkit-text-fill-color: transparent;
         -moz-text-fill-color: transparent;
+        -webkit-text-stroke: 2px transparent;
         background-size:200% 200%;     
         animation: animatedText 3s infinite alternate;
         }
@@ -224,8 +161,8 @@
         }
       }
 
-        .content2 {
-          font-family:'CircularStd-Medium';
+      .mob_content2 {
+          font-family:'Gilroy-Medium';
           text-align: left;
           margin-top: 50px;
           font-size: 16px;
@@ -233,16 +170,52 @@
           color: #828282;
         }
 
-        .btn {
+        .mob_btn {
           left: auto;
           width: 173px;
           height: 44px;
           margin-top: 80px;
           background: #f6d365;
+          justify-content: center;
+          align-items: center;
           border-radius: 50px;
         }
-        .text {
-          font-family:'CircularStd-Medium';
+        .mob_text {
+          font-family:'Gilroy-SemiBold';
+          font-size: 16px;
+          line-height: 19px;
+          text-align: center;
+          color: #050505;
+        }
+
+      @media only screen and (min-width:768px){
+        .web_view{
+          display: block;
+        }
+      }
+      @media only screen and (max-width:425px){
+        .mob_view{
+          display: block;
+        }
+        .flex-container {
+          background-color: #050505;
+          display: flex;
+          justify-content: center;
+          align-items:flex-start;  
+          margin-left: 30px;      
+        }
+        .mob_btn {
+          width: 173px;
+          height: 44px;
+          margin-top: 80px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: #f6d365;
+          border-radius: 50px;
+        }
+        .mob_text {
+          font-family:'Gilroy-SemiBold';
           font-size: 16px;
           line-height: 19px;
           text-align: center;
@@ -250,27 +223,35 @@
         }
       }
     </style>
-  </head>
-
-  <body class="flex-container">
-    <div style="max-width: 1240px">
-      <h1 style="flex: row; display: flex; flex-wrap: wrap;">
-        <span class="gradient1">Design 
-        <!-- <strong class="content1 -webkit-text-stroke: 2px #ffffff; height:">We</strong><strong class="gradient1">Design </strong><strong class="content1 -webkit-text-stroke: 2px #ffffff;">& </strong><strong class="gradient1">Build </strong><strong class="content1 -webkit-text-stroke: 2px #ffffff;">Digital</strong><strong class="content1 ">Products</strong><br/></strong><strong class="content1"> for the 21st Century.</strong> -->
-      </h1>
-      <div class="hidden_content">
-        <div class="stroke">We</div> <div><span class="gradient1">Design</span
-        ><span class="stroke"> & </span><span class="gradient1">Build</span
-        ></div> <div><span class="stroke">
-          Digital Products</div><div> <span class="stroke">for the 21st</span></div>
-          <div><span class="stroke"> Century.</span></div>
-      </div>
-      <div class="content2">
-        Strategy, Design, Development, Business Automation, Consultancy
-      </div>
+</head>
+ <body class="flex-container">
+  <div class="web_view ">
+    <div>
+    <h1 style="max-width: 1240px; flex: row; display: flex; flex-wrap: wrap; justify-content: center;">
+      <span class="web_content1 -webkit-text-stroke: 2px #ffffff;">We</span><span class="web_grad">Design </span><span class="web_content1 -webkit-text-stroke: 2px #ffffff;">& </span><span class="web_grad">Build </span><span class="web_content1 -webkit-text-stroke: 2px #ffffff;">Digital</span><span class="web_content1 ">Products</span><span class="web_content1"> for the 21st Century.</span>
+    </h1>
+    </div>
+    <div class="web_content2">
+      Strategy, Design, Development, Business Automation, Consultancy.
+    </div>
+    <div style="display: flex; align-items: center; justify-content: center">
+      <div class="web_btn"><span class="web_text">Get in touch</span></div>
+    </div>
+  </div>
+  <div class="mob_view">
+    <div>
+      <div class="mob_content1">We</div> <div><strong class="mob_grad">Design</strong
+        ><strong class="mob_content1"> & </strong><strong class="mob_grad">Build</strong
+        ></div> <div><strong class="mob_content1">
+          Digital Products</strong></div><div> <strong class="mob_content1">for the 21st</strong></div>
+          <div><strong class="mob_content1"> Century.</strong></div>
+    </div>
+    <div class="mob_content2">
+      Strategy, Design, Development, Business Automation, Consultancy
     </div>
     <div style="max-width: 400px">
-      <div class="btn"><span class="text">Get in touch</span></div>
+      <div class="mob_btn"><span class="mob_text">Get in touch</span></div>
     </div>
-  </body>
+  </div>   
+</body>
 </html>
