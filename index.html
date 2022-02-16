@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html style="height: 100%; width: 100%; display: flex">
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
-        
-        @font-face {
+      @font-face {
         font-family: "Helvetica";
         src: url("Helvetica.woff2") format("woff2"),
           url("Helvetica.woff") format("woff");
@@ -29,8 +28,8 @@
         font-style: normal;
         font-display: swap;
       }
-      
-      .flex-container {
+
+      .flexContainer {
         display: flex;
         flex: 1 1 0%;
         flex-direction: column;
@@ -39,14 +38,13 @@
         align-items: center;
       }
 
-      .web_view {
+      .webView {
         display: none;
         text-align: left;
       }
 
-      .mob_view {
+      .mobolieView {
         display: none;
-      
       }
 
       ::selection {
@@ -55,23 +53,23 @@
         -webkit-text-fill-color: white;
       }
 
-      .web_content1 {
-          display: block;
-          font-family: "Helvetica";
-          font-style: normal;
-          font-weight: 600;
-          font-size: 74px;
-          line-height: 90px;
-          text-align: center;
-          color: white;
-        }
+      .webContent1 {
+        display: block;
+        font-family: "Helvetica";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 74px;
+        line-height: 90px;
+        text-align: center;
+        color: white;
+      }
 
-        span{
-          padding-left: 12px;
-        }
+      span {
+        padding-left: 12px;
+      }
 
-        .web_content2 {
-        font-family:'Gilroy-Medium';
+      .webContent2 {
+        font-family: "Gilroy-Medium";
         font-size: 30px;
         line-height: 35px;
         text-align: center;
@@ -79,30 +77,34 @@
         color: #828282;
       }
 
-        .web_grad {
+      .webGradient {
         font-family: "Helvetica";
         font-style: normal;
         font-weight: 800;
         font-size: 74px;
         line-height: 90px;
-        -webkit-text-stroke: 2px transparent; 
-        background-image: linear-gradient(to bottom right, #fda085 10%, #f6d365 100%);
+        -webkit-text-stroke: 2px transparent;
+        background-image: linear-gradient(
+          to bottom right,
+          #fda085 10%,
+          #f6d365 100%
+        );
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        background-size:200% 200%;     
+        background-size: 200% 200%;
         animation: animatedText 3s infinite alternate;
       }
       @keyframes animatedText {
         0% {
-          background-position:100% 100%; 
+          background-position: 100% 100%;
         }
 
         100% {
-          background-position:0 0; 
+          background-position: 0 0;
         }
-    }
+      }
 
-    .web_btn {
+      .webButton {
         background: #f6d365;
         border-radius: 50px;
         width: 400px;
@@ -112,99 +114,102 @@
         justify-content: center;
         align-items: center;
         box-shadow: 1px 1px 2px #f6d365;
-        
       }
 
-      .web_text {
-        font-family: 'Gilroy-SemiBold';
+      .webButtonText {
+        font-family: "Gilroy-SemiBold";
         font-size: 30px;
         font-weight: 400;
         line-height: 35px;
         text-align: center;
       }
 
-      .mob_content1 {
+      .mobileContent1 {
         font-family: "Helvetica";
         font-style: normal;
         font-weight: normal;
         font-size: 40px;
         line-height: 50px;
         text-align: left;
-        color: #FFFFFF;
-        -webkit-text-stroke: 1px #FFFFFF;
+        color: #ffffff;
+        -webkit-text-stroke: 1px #ffffff;
       }
 
-      .mob_grad {
-          font-family:"Helvetica";
-          text-align: left;
-          font-style: normal;
-          font-weight: normal;
-          font-size: 40px;
-          line-height: 50px;
-          background-image: linear-gradient(to bottom right, #fda085 10%, #f6d365 100%);
+      .mobileGradient {
+        font-family: "Helvetica";
+        text-align: left;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 40px;
+        line-height: 50px;
+        background-image: linear-gradient(
+          to bottom right,
+          #fda085 10%,
+          #f6d365 100%
+        );
         -webkit-background-clip: text;
         -moz-background-clip: text;
         -webkit-text-fill-color: transparent;
         -moz-text-fill-color: transparent;
         -webkit-text-stroke: 2px transparent;
-        background-size:200% 200%;     
+        background-size: 200% 200%;
         animation: animatedText 3s infinite alternate;
-        }
+      }
 
-        @keyframes animatedText {
+      @keyframes animatedText {
         0% {
-          background-position:100% 100%; 
+          background-position: 100% 100%;
         }
 
         100% {
-          background-position:0 0; 
+          background-position: 0 0;
         }
       }
 
-      .mob_content2 {
-          font-family:'Gilroy-Medium';
-          text-align: left;
-          margin-top: 50px;
-          font-size: 16px;
-          line-height: 19px;
-          color: #828282;
-        }
+      .mobileContent2 {
+        font-family: "Gilroy-Medium";
+        text-align: left;
+        margin-top: 50px;
+        font-size: 16px;
+        line-height: 19px;
+        color: #828282;
+      }
 
-        .mob_btn {
-          left: auto;
-          width: 173px;
-          height: 44px;
-          margin-top: 80px;
-          background: #f6d365;
-          justify-content: center;
-          align-items: center;
-          border-radius: 50px;
-        }
-        .mob_text {
-          font-family:'Gilroy-SemiBold';
-          font-size: 16px;
-          line-height: 19px;
-          text-align: center;
-          color: #050505;
-        }
+      .mobileButton {
+        left: auto;
+        width: 173px;
+        height: 44px;
+        margin-top: 80px;
+        background: #f6d365;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+      }
+      .mobileButtonText {
+        font-family: "Gilroy-SemiBold";
+        font-size: 16px;
+        line-height: 19px;
+        text-align: center;
+        color: #050505;
+      }
 
-      @media only screen and (min-width:768px){
-        .web_view{
+      @media only screen and (min-width: 768px) {
+        .webView {
           display: block;
         }
       }
-      @media only screen and (max-width:425px){
-        .mob_view{
+      @media only screen and (max-width: 425px) {
+        .mobolieView {
           display: block;
         }
-        .flex-container {
+        .flexContainer {
           background-color: #050505;
           display: flex;
           justify-content: center;
-          align-items:flex-start;  
-          margin-left: 30px;      
+          align-items: flex-start;
+          margin-left: 30px;
         }
-        .mob_btn {
+        .mobileButton {
           width: 173px;
           height: 44px;
           margin-top: 80px;
@@ -214,8 +219,8 @@
           background: #f6d365;
           border-radius: 50px;
         }
-        .mob_text {
-          font-family:'Gilroy-SemiBold';
+        .mobileButtonText {
+          font-family: "Gilroy-SemiBold";
           font-size: 16px;
           line-height: 19px;
           text-align: center;
@@ -223,35 +228,54 @@
         }
       }
     </style>
-</head>
- <body class="flex-container">
-  <div class="web_view ">
-    <div>
-    <h1 style="max-width: 1240px; flex: row; display: flex; flex-wrap: wrap; justify-content: center;">
-      <span class="web_content1 -webkit-text-stroke: 2px #ffffff;">We</span><span class="web_grad">Design </span><span class="web_content1 -webkit-text-stroke: 2px #ffffff;">& </span><span class="web_grad">Build </span><span class="web_content1 -webkit-text-stroke: 2px #ffffff;">Digital</span><span class="web_content1 ">Products</span><span class="web_content1"> for the 21st Century.</span>
-    </h1>
+  </head>
+  <body class="flexContainer">
+    <div class="webView">
+      <div>
+        <h1
+          style="
+            max-width: 1240px;
+            flex: row;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+          "
+        >
+          <span class="webContent1 -webkit-text-stroke: 2px #ffffff;">We</span
+          ><span class="webGradient">Design </span
+          ><span class="webContent1 -webkit-text-stroke: 2px #ffffff;">& </span
+          ><span class="webGradient">Build </span
+          ><span class="webContent1 -webkit-text-stroke: 2px #ffffff;"
+            >Digital</span
+          ><span class="webContent1">Products</span
+          ><span class="webContent1"> for the 21st Century.</span>
+        </h1>
+      </div>
+      <div class="webContent2">
+        Strategy, Design, Development, Business Automation, Consultancy.
+      </div>
+      <div style="display: flex; align-items: center; justify-content: center">
+        <div class="webButton"><span class="webButtonText">Get in touch</span></div>
+      </div>
     </div>
-    <div class="web_content2">
-      Strategy, Design, Development, Business Automation, Consultancy.
+    <div class="mobolieView">
+      <div>
+        <div class="mobileContent1">We</div>
+        <div>
+          <strong class="mobileGradient">Design</strong
+          ><strong class="mobileContent1"> & </strong
+          ><strong class="mobileGradient">Build</strong>
+        </div>
+        <div><strong class="mobileContent1"> Digital Products</strong></div>
+        <div><strong class="mobileContent1">for the 21st</strong></div>
+        <div><strong class="mobileContent1"> Century.</strong></div>
+      </div>
+      <div class="mobileContent2">
+        Strategy, Design, Development, Business Automation, Consultancy
+      </div>
+      <div style="max-width: 400px">
+        <div class="mobileButton"><span class="mobileButtonText">Get in touch</span></div>
+      </div>
     </div>
-    <div style="display: flex; align-items: center; justify-content: center">
-      <div class="web_btn"><span class="web_text">Get in touch</span></div>
-    </div>
-  </div>
-  <div class="mob_view">
-    <div>
-      <div class="mob_content1">We</div> <div><strong class="mob_grad">Design</strong
-        ><strong class="mob_content1"> & </strong><strong class="mob_grad">Build</strong
-        ></div> <div><strong class="mob_content1">
-          Digital Products</strong></div><div> <strong class="mob_content1">for the 21st</strong></div>
-          <div><strong class="mob_content1"> Century.</strong></div>
-    </div>
-    <div class="mob_content2">
-      Strategy, Design, Development, Business Automation, Consultancy
-    </div>
-    <div style="max-width: 400px">
-      <div class="mob_btn"><span class="mob_text">Get in touch</span></div>
-    </div>
-  </div>   
-</body>
+  </body>
 </html>
